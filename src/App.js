@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-header">
+        Joseph Canning
+      </div>
+      <NavBar />
+      <div className="App-body"></div>
     </div>
   );
+}
+
+function NavBar() {
+
+  return (
+
+    <div className="App-nav">
+      <NavButton text="About Me" />
+      <NavButton text="Programming"/>
+      <NavButton text="Writing"/>
+    </div>
+
+  )
+
+}
+
+function NavButton({text}) {
+
+  const [selected, setSelected] = useState(0);
+
+  function handleClick() {
+    setSelected(!selected);
+  }
+
+  return (
+
+    <button className="App-nav-button" onClick={handleClick}>
+      {text}
+    </button>
+
+  );
+
 }
 
 export default App;
