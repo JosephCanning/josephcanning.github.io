@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/josephcanning.github.io/static/css/main.bfbbe0cf.css",
-    "main.js": "/josephcanning.github.io/static/js/main.4f88b0cc.js",
-    "static/js/592.285c0069.chunk.js": "/josephcanning.github.io/static/js/592.285c0069.chunk.js",
-    "index.html": "/josephcanning.github.io/index.html",
-    "main.bfbbe0cf.css.map": "/josephcanning.github.io/static/css/main.bfbbe0cf.css.map",
-    "main.4f88b0cc.js.map": "/josephcanning.github.io/static/js/main.4f88b0cc.js.map",
-    "592.285c0069.chunk.js.map": "/josephcanning.github.io/static/js/592.285c0069.chunk.js.map"
+    "main.css": "/static/css/main.bfbbe0cf.css",
+    "main.js": "/static/js/main.0956aa32.js",
+    "static/js/592.285c0069.chunk.js": "/static/js/592.285c0069.chunk.js",
+    "index.html": "/index.html",
+    "main.bfbbe0cf.css.map": "/static/css/main.bfbbe0cf.css.map",
+    "main.0956aa32.js.map": "/static/js/main.0956aa32.js.map",
+    "592.285c0069.chunk.js.map": "/static/js/592.285c0069.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bfbbe0cf.css",
-    "static/js/main.4f88b0cc.js"
+    "static/js/main.0956aa32.js"
   ]
 }
