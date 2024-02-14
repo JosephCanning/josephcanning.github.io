@@ -15,29 +15,23 @@ function App() {
 
 function NavBar() {
 
+  const [selectIndex, setSelectIndex] = useState(0);
+
   return (
-
     <div className="App-nav">
-      <NavButton text="About Me" />
-      <NavButton text="Programming"/>
-      <NavButton text="Writing"/>
+      <NavButton text="About Me" selected={selectIndex === 0} onSelect={() => setSelectIndex(0)} />
+      <NavButton text="Programming" selected={selectIndex === 1} onSelect={() => setSelectIndex(1)} />
+      <NavButton text="Writing" selected={selectIndex === 2} onSelect={() => setSelectIndex(2)} />
     </div>
-
   )
 
 }
 
-function NavButton({text}) {
-
-  const [selected, setSelected] = useState(0);
-
-  function handleClick() {
-    setSelected(!selected);
-  }
+function NavButton({text, selected, onSelect}) {
 
   return (
 
-    <button className="App-nav-button" onClick={handleClick}>
+    <button className={selected ? "App-nav-button-select" : "App-nav-button"} onClick={onSelect}>
       {text}
     </button>
 
