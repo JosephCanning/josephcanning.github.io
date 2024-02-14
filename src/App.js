@@ -59,7 +59,7 @@ function AboutMe() {
   return (
     <div className="App-body">
       <h2 className="App-body-heading">About Me</h2>
-      <p className="App-body-para">I am a programmer and a writer with a passion for technology currently living in Sylvania, Ohio. In 2021, I graduated from the University of Illinois Chicago with a bachelor's degree in computer science and a specialization in software engineering. I also attended the University of Wisconsin Parkside before transferring to my alma mater. Since graduating, I have also earned a certificate in technical writing from Clemson University's Center for Corporate Learning.</p>
+      <p className="App-body-para">I'm a programmer and a writer with a passion for technology currently living in Sylvania, Ohio. In 2021, I graduated from the University of Illinois Chicago with a bachelor's degree in computer science and a specialization in software engineering. I also attended the University of Wisconsin Parkside before transferring to my alma mater. Since graduating, I have also earned a certificate in technical writing from Clemson University's Center for Corporate Learning.</p>
       <p className="App-body-para">I possess a wide range of technical skills including development for the modern web, SQL database management, proficiency with numerous programming languages, and the use of software design patterns. Additionally, I am an adept communicator&mdash;both in writing and in speech. My past writing projects include user guides and recommendation reports. I am currently seeking job opportunities. If you'd like to get in touch, I'd love to talk! My contact information is at the bottom of this page.</p>
       <br></br>
       <hr className="App-divider"></hr>

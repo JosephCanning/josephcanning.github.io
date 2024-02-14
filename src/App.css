@@ -22,8 +22,8 @@
 
 .App-body {
   min-height: 80vh;
-  min-width: 25vw;
-  max-width: calc(250px + 40vw);
+  min-width: 400px;
+  max-width: 67vw;
   padding-top: 3%;
   display: inline-block;
   flex-direction: row;
@@ -35,7 +35,7 @@
   color: #d4d0d0;
   align-items: left;
   justify-content: left;
-  font-size: calc(2px + 3vmin);
+  font-size: calc(18px + 1.5vmin);
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -46,7 +46,7 @@
   color: #d4d0d0;
   line-height: 133%;
   text-align: justify;
-  font-size: calc(1px + 2vmin);
+  font-size: calc(8px + 1.5vmin);
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
