@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf'; 
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 import './App.css';
 import resume from './docs/JosephCanningResume.pdf';
 import { saveAs } from 'file-saver';
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+const pdfOptions = {
+  cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
+};
 
 function App() {
   return (
@@ -148,8 +154,8 @@ function Resume({pageNum}) {
         <br></br>
         <br></br>
         <div className="App-pdf">
-          <Document file={resume}>
-            <Page pageNumber={pageNum} renderAnnotationLayer={false} renderTextLayer={false} scale={1.12} />
+          <Document file={resume} options={pdfOptions}>
+            <Page pageNumber={pageNum} renderAnnotationLayer={true} renderTextLayer={true} scale={1.12} />
           </Document>
         </div>
       </>
