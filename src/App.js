@@ -11,7 +11,7 @@ function App() {
 }
 
 // The entire website body including the navigation bar and text/image content
-function SiteBody({onSelect}) {
+function SiteBody() {
 
   const [selectIndex, setSelectIndex] = useState(0);
 
@@ -40,20 +40,21 @@ function NavButton({text, selected, onSelect}) {
 }
 
 // Displays relevant content for the selected site section
-function SiteContent({content, selectIndex}) {
+function SiteContent({selectIndex}) {
 
   if (selectIndex === 0) {
     return(<AboutMe />);
   } else if (selectIndex === 1) {
-    return(<AboutMe />);
+    return(<Programming />);
   } else if (selectIndex === 2) {
-    return(<AboutMe />);
+    return(<Writing />);
   } else {
     return(<AboutMe />);
   }
 
 }
 
+// The "About Me" section with personal info
 function AboutMe() {
 
   return (
@@ -80,6 +81,31 @@ function AboutMe() {
       <br></br>
       <br></br>
       <br></br>
+    </div>
+  );
+
+}
+
+// The "Programming" section, highlighting some programming projects
+function Programming() {
+
+  return (
+    <div className="App-body">
+      <h2 className="App-body-heading">Programming Work</h2>
+      <p className="App-body-para">Working on it!</p>
+    </div>
+  );
+
+}
+
+
+// The "Writing" section, highlighting some writing projects
+function Writing() {
+
+  return (
+    <div className="App-body">
+      <h2 className="App-body-heading">Writing Work</h2>
+      <p className="App-body-para">Working on it!</p>
     </div>
   );
 

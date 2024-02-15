@@ -22,8 +22,8 @@
 
 .App-body {
   min-height: 80vh;
-  min-width: 400px;
-  max-width: 67vw;
+  min-width: 250px;
+  max-width: 67%;
   padding-top: 3%;
   display: inline-block;
   flex-direction: row;
