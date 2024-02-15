@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf'; 
 import './App.css';
+import resume from './docs/JosephCanningResume.pdf';
+import { saveAs } from 'file-saver';
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 function App() {
   return (
     <div className="App">
       <div className="App-header">Joseph Canning</div>
       <SiteBody />
+      <div className="App-footer"></div>
     </div>
   );
 }
@@ -57,14 +62,33 @@ function SiteContent({selectIndex}) {
 // The "About Me" section with personal info
 function AboutMe() {
 
+  const [pageNum, setPageNum] = useState(1);
+
   return (
+
     <div className="App-body">
+
       <h2 className="App-body-heading">About Me</h2>
       <p className="App-body-para">I'm a programmer and a writer with a passion for technology currently living in Sylvania, Ohio. In 2021, I graduated from the University of Illinois Chicago with a bachelor's degree in computer science and a specialization in software engineering. I also attended the University of Wisconsin Parkside before transferring to my alma mater. Since graduating, I have also earned a certificate in technical writing from Clemson University's Center for Corporate Learning.</p>
       <p className="App-body-para">I possess a wide range of technical skills including development for the modern web, SQL database management, proficiency with numerous programming languages, and the use of software design patterns. Additionally, I am an adept communicator&mdash;both in writing and in speech. My past writing projects include user guides and recommendation reports. I am currently seeking job opportunities. If you'd like to get in touch, I'd love to talk! My contact information is at the bottom of this page.</p>
+      
       <br></br>
       <hr className="App-divider"></hr>
       <br></br>
+
+      <h2 className="App-body-heading">Resume</h2>
+      {/* <div className="App-pdf">
+        <Document file={resume}>
+          <Page pageNumber={pageNum} renderAnnotationLayer={false} renderTextLayer={false} scale={1.25} />
+        </Document>
+      </div> */}
+      <Resume text="Show" pageNum={1} />
+      <br></br>
+
+      <br></br>
+      <hr className="App-divider"></hr>
+      <br></br>
+
       <h2 className="App-body-heading">Links & Contact Info</h2>
       <a href="mailto:josephecanning@gmail.com">
         <p className="App-body-para"><b>Email:</b>&ensp;josephecanning@gmail.com</p>
@@ -80,8 +104,8 @@ function AboutMe() {
       </a>
       <br></br>
       <br></br>
-      <br></br>
     </div>
+
   );
 
 }
@@ -108,6 +132,39 @@ function Writing() {
       <p className="App-body-para">Working on it!</p>
     </div>
   );
+
+}
+
+function Resume({pageNum}) {
+
+  const [show, setShow] = useState(false);
+
+  if (show) {
+    return(
+      <>
+        <br></br>
+        <button className="App-show-button" onClick={() => setShow(false)}>Hide</button>
+        <button className="App-show-button" onClick={() => saveAs(resume, "JosephCanningResume.pdf")}>Download</button>
+        <br></br>
+        <br></br>
+        <div className="App-pdf">
+          <Document file={resume}>
+            <Page pageNumber={pageNum} renderAnnotationLayer={false} renderTextLayer={false} scale={1.12} />
+          </Document>
+        </div>
+      </>
+    );
+  } else {
+    return(
+      <>
+        <br></br>
+        <button className="App-show-button" onClick={() => setShow(true)}>Show</button>
+        <button className="App-show-button" onClick={() => saveAs(resume, "JosephCanningResume.pdf")}>Download</button>
+        <br></br>
+        <div className="App-pdf"></div>
+      </>
+    );
+  }
 
 }
 

@@ -1,7 +1,8 @@
 .App {
   text-align: center;
   min-height: 100vh;
-  background-color: #2e2f30;
+  background-color: #1c1e20;
+  /* background-color: #D1CBC1; */
 }
 
 .App-header {
@@ -20,6 +21,11 @@
   font-style: normal;
 }
 
+.App-footer {
+  background-color: #00264c;
+  min-height: 2vh;
+}
+
 .App-body {
   min-height: 80vh;
   min-width: 250px;
@@ -29,6 +35,7 @@
   flex-direction: row;
   align-items: left;
   justify-content: center;
+  animation: fadeIn 0.25s;
 }
 
 .App-body-heading {
@@ -97,11 +104,46 @@
   font-style: normal;
 }
 
+.App-show-button {
+  color: #d4d0d0;
+  background-color: #00264c;
+  font-size: calc(3.5px + 2vmin);
+  margin-left: 15px;
+  margin-right: 15px;
+  min-width: 10%;
+  min-height: 3.5vh;
+  max-height: 3.5vh;
+  border: 1px solid #002850;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.App-show-button:hover {
+  color: #e2ded0;
+  background-color: #002340;
+}
+
 .App-divider {
   color: #747070;
+}
+
+.App-pdf {
+  padding-top: 20px;
+  max-width: calc(100px + 25vw);
+  display:inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
   color: inherit;
   text-decoration: inherit;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
