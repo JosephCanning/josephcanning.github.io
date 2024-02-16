@@ -154,8 +154,8 @@ function Resume({pageNum}) {
         <br></br>
         <br></br>
         <div className="App-pdf">
-          <Document file={resume} options={pdfOptions}>
-            <Page pageNumber={pageNum} renderAnnotationLayer={true} renderTextLayer={true} scale={1.12} />
+          <Document file={resume} options={pdfOptions} loading={<p className="App-body-para">Loading document...</p>}>
+            <Page pageNumber={pageNum} renderAnnotationLayer={true} renderTextLayer={true} scale={window.innerWidth >= 768 ? 1.24 : 0.64} />
           </Document>
         </div>
       </>
