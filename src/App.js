@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf'; 
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
 import './App.css';
 import resume from './docs/JosephCanningResume.pdf';
 import { saveAs } from 'file-saver';
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
-const pdfOptions = {
-  cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
-};
 
 function App() {
   return (
@@ -88,7 +80,7 @@ function AboutMe() {
           <Page pageNumber={pageNum} renderAnnotationLayer={false} renderTextLayer={false} scale={1.25} />
         </Document>
       </div> */}
-      <Resume text="Show" pageNum={1} />
+      <ViewPDF document={resume} />
       <br></br>
 
       <br></br>
@@ -141,7 +133,7 @@ function Writing() {
 
 }
 
-function Resume({pageNum}) {
+function ViewPDF({document}) {
 
   const [show, setShow] = useState(false);
 
@@ -154,10 +146,15 @@ function Resume({pageNum}) {
         <br></br>
         <br></br>
         <div className="App-pdf">
+          <object data={document} type="application/pdf" className="App-pdf-obj">
+            <p className="App-body-para">PDF cannot be displayed. Click download to view file.</p>
+          </object>
+        </div>
+        {/* <div className="App-pdf">
           <Document file={resume} options={pdfOptions} loading={<p className="App-body-para">Loading document...</p>}>
             <Page pageNumber={pageNum} renderAnnotationLayer={true} renderTextLayer={true} scale={window.innerWidth >= 768 ? 1.24 : 0.64} />
           </Document>
-        </div>
+        </div> */}
       </>
     );
   } else {

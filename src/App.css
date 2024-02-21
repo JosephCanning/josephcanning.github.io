@@ -131,11 +131,18 @@
 
 .App-pdf {
   padding-top: 20px;
-  max-width: calc(100px + 25vw);
+  /* max-width: calc(100px + 25vw); */
+  min-width: 100%;
+  min-height: 100%;
   display:inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.App-pdf-obj {
+  min-width: 100%;
+  min-height: 100vh;
 }
 
 a {
