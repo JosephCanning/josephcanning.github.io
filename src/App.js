@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { saveAs } from 'file-saver';
 import './App.css';
 import resume from './docs/JosephCanningResume.pdf';
-import { saveAs } from 'file-saver';
+import styleGuide from './docs/TW - Style Guide - Joseph Canning.pdf';
+import userGuide from './docs/TW - User Guide - Joseph Canning.pdf';
+import recommendation from './docs/TW - Recommendation - Joseph Canning.pdf';
+
 
 function App() {
   return (
@@ -69,17 +73,9 @@ function AboutMe() {
       <h2 className="App-body-heading">About Me</h2>
       <p className="App-body-para">I'm a programmer and a writer with a passion for technology currently living in Sylvania, Ohio. In 2021, I graduated from the University of Illinois Chicago with a bachelor's degree in computer science and a specialization in software engineering. I also attended the University of Wisconsin Parkside before transferring to my alma mater. Since graduating, I have also earned a certificate in technical writing from Clemson University's Center for Corporate Learning.</p>
       <p className="App-body-para">I possess a wide range of technical skills including development for the modern web, SQL database management, proficiency with numerous programming languages, and the use of software design patterns. Additionally, I am an adept communicator&mdash;both in writing and in speech. My past writing projects include user guides and recommendation reports. I am currently seeking job opportunities. If you'd like to get in touch, I'd love to talk! My contact information is at the bottom of this page.</p>
-      
-      <br></br>
-      <hr className="App-divider"></hr>
       <br></br>
 
-      <h2 className="App-body-heading">Resume</h2>
-      {/* <div className="App-pdf">
-        <Document file={resume}>
-          <Page pageNumber={pageNum} renderAnnotationLayer={false} renderTextLayer={false} scale={1.25} />
-        </Document>
-      </div> */}
+      <h2 className="App-body-heading-small">Resume</h2>
       <ViewPDF document={resume} />
       <br></br>
 
@@ -113,8 +109,12 @@ function Programming() {
 
   return (
     <div className="App-body">
-      <h2 className="App-body-heading">Programming Work</h2>
-      <p className="App-body-para">Working on it!</p>
+
+      <h2 className="App-body-heading">Projects</h2>
+      <p className="App-body-para">To see past programming projects I've worked on and what I'm doing now, visit my GitHub page <a href="https://github.com/josephcanning"><b>here</b></a>.</p>
+      <br></br>
+      <br></br>
+
     </div>
   );
 
@@ -126,8 +126,31 @@ function Writing() {
 
   return (
     <div className="App-body">
-      <h2 className="App-body-heading">Writing Work</h2>
-      <p className="App-body-para">Working on it!</p>
+
+      <h2 className="App-body-heading">Technical Writing</h2>
+      <p className="App-body-para">Below are some examples of the writing I did to get my certificate in technical writing. I enjoy and make music as a hobby, so I chose to focus on musical subjects for these assignments. The assignments include a style guide, a user guide, and a recommendation report.</p>
+      <br></br>
+
+      <h2 className="App-body-heading-small">Style Guide</h2>
+      <ViewPDF document={styleGuide} />
+      <br></br>
+
+      <h2 className="App-body-heading-small">User Guide</h2>
+      <ViewPDF document={userGuide} />
+      <br></br>
+
+      <h2 className="App-body-heading-small">Recommendation Report</h2>
+      <ViewPDF document={recommendation} />
+      <br></br>
+
+      <br></br>
+      <hr className="App-divider"></hr>
+      <br></br>
+
+      <h2 className="App-body-heading">News Writing</h2>
+      <p className="App-body-para">While attending the University of Wisconsin Parkside, I wrote for the student newspaper, the Ranger News. I wrote both op-ed and campus news articles using AP style, and I often conducted interviews with faculty and students. You can view my writing on their archive website <a href="https://archives.uwp.edu/exhibits/show/rangernews/2017"><b>here</b></a> (2016-2017) and <a href="https://archives.uwp.edu/exhibits/show/rangernews/2018"><b>here</b></a> (2017-2018).</p>
+      <br></br>
+
     </div>
   );
 
@@ -150,11 +173,6 @@ function ViewPDF({document}) {
             <p className="App-body-para">PDF cannot be displayed. Click download to view file.</p>
           </object>
         </div>
-        {/* <div className="App-pdf">
-          <Document file={resume} options={pdfOptions} loading={<p className="App-body-para">Loading document...</p>}>
-            <Page pageNumber={pageNum} renderAnnotationLayer={true} renderTextLayer={true} scale={window.innerWidth >= 768 ? 1.24 : 0.64} />
-          </Document>
-        </div> */}
       </>
     );
   } else {
