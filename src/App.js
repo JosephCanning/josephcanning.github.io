@@ -111,7 +111,8 @@ function Programming() {
     <div className="App-body">
 
       <h2 className="App-body-heading">Projects</h2>
-      <p className="App-body-para">To see past programming projects I've worked on and what I'm doing now, visit my GitHub page <a href="https://github.com/josephcanning"><b>here</b></a>.</p>
+      <p className="App-body-para">This website was built primarily with JavaScript using React and is hosted using GitHub pages.</p>
+      <p className="App-body-para">To see the code for this website, projects I've worked on in the past, and what I'm doing now, visit my GitHub page <a href="https://github.com/josephcanning"><b>here</b></a>.</p>
       <br></br>
       <br></br>
 
@@ -134,13 +135,16 @@ function Writing() {
       <h2 className="App-body-heading-small">Style Guide</h2>
       <ViewPDF document={styleGuide} />
       <br></br>
+      <br></br>
 
       <h2 className="App-body-heading-small">User Guide</h2>
       <ViewPDF document={userGuide} />
       <br></br>
+      <br></br>
 
       <h2 className="App-body-heading-small">Recommendation Report</h2>
       <ViewPDF document={recommendation} />
+      <br></br>
       <br></br>
 
       <br></br>
